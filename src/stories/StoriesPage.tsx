@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { Header } from "../stories/Header"; // 👈 correct relative path
-import "../stories/page.css"; // 👈 storybook page styles
+import { Header } from "./Header"; // 👈 same folder me Header.tsx hai
+import "./storiesPage.css"; // 👈 naya CSS file
 
 type User = {
   name: string;
 };
 
-export default function Home() {
+export const StoriesPage = () => {
   const [user, setUser] = React.useState<User>();
 
   return (
@@ -27,7 +27,11 @@ export default function Home() {
         </p>
         <p>
           You can still follow a{" "}
-          <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://componentdriven.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <strong>component-driven</strong>
           </a>{" "}
           process: build atomic components → combine into pages → use them in routes.
@@ -39,10 +43,10 @@ export default function Home() {
         </ul>
 
         <div className="tip-wrapper">
-          <span className="tip">Tip</span> Adjust the width of the viewport in dev tools to test
-          responsiveness.
+          <span className="tip">Tip</span> Adjust the width of the viewport in
+          dev tools to test responsiveness.
         </div>
       </section>
     </article>
   );
-}
+};
